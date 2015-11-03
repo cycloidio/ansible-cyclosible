@@ -1,7 +1,7 @@
 ---
 # tasks file for cyclosible
 - name: Install Cyclosible
-  pip: name=cyclosible virtualenv={{virtualenv_dir}}
+  pip: name=cyclosible virtualenv={{ cyclosible_virtualenv_dir }}
 
 - name: Install uWSGI
-  pip: name=uwsgi virtualenv={{virtualenv_dir}}
+  pip: name=uwsgi virtualenv={{ cyclosible_virtualenv_dir }}

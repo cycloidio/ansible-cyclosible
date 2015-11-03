@@ -23,9 +23,9 @@
     - virtualenvwrapper
 
 - name: Check if virtualenv already exists
-  stat: path={{virtualenv_dir}}
+  stat: path={{ cyclosible_virtualenv_dir }}
   register: venv_dir
 
 - name: Create virtualenv
-  shell: virtualenv {{virtualenv_dir}}
+  shell: virtualenv {{ cyclosible_virtualenv_dir }}
   when: venv_dir.stat.isdir is not defined
