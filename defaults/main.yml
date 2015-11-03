@@ -1,6 +1,7 @@
 ---
 # defaults file for cyclosible
 user: admin
+virtualenv_dir: /home/{{ user}}/.virtualenvs
 cyclosible-settings:
   - DATABASES = {
       'default': {
