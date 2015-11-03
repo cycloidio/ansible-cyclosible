@@ -1,0 +1,29 @@
+---
+# tasks file for cyclosible
+- name: Debian | Install os packages
+  apt: pkg={{item}} state=installed update_cache=yes
+  with_items:
+    - python-dev
+    - python-pip
+  when: ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu'
+
+- name: Centos | Install list of packages
+  yum: pkg={{item}} state=installed update_cache=yes
+  with_items:
+    - python-devel
+    - python-pip
+  when: ansible_distribution == 'CentOS' or ansible_distribution == 'Red Hat Enterprise Linux'
+
+- name: Install virtualenv and virtualenvwrapper
+  pip: name={{item}}
+  with_items:
+    - virtualenv
+    - virtualenvwrapper
+
+- name: Check if virtualenv already exists
+  stat: path={{virtualenv_dir}}
+  register: venv_dir
+
+- name: Create virtualenv
+  shell: virtualenv {{virtualenv_dir}}
+  when: venv_dir.stat.isdir is not defined

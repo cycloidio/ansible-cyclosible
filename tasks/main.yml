@@ -1,0 +1,5 @@
+---
+# tasks file for cyclosible
+- include: virtualenv.yml
+- include: setup.yml
+- include: configure.yml

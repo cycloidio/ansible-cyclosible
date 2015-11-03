@@ -1,0 +1,7 @@
+---
+# tasks file for cyclosible
+- name: Create /etc/cyclosible
+  file: path=/etc/cyclosible state=directory mode=0700 owner={{ user }}
+
+- name: Configure Cyclosible
+  template: src=settings.py.j2 dest=/etc/cyclosible/settings.py owner={{ user }} group=root mode=0740

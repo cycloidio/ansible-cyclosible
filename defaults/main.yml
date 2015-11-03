@@ -1,0 +1,25 @@
+---
+# defaults file for cyclosible
+user: admin
+cyclosible-settings:
+  - DATABASES = {
+      'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+      }
+    }
+  - WS4REDIS_SUBSCRIBER = 'cyclosible.Cyclosible.websocket.WebSocketSubscriber'
+  - WS4REDIS_PREFIX = 'ws'
+  - WS4REDIS_EXPIRE = 7200
+  - WS4REDIS_CONNECTION = {
+      'host': 'localhost',
+      'port': 6379,
+      'db': 1,
+    }
+  - BROKER_URL = 'redis://localhost:6379/0'
+  - CELERY_RESULT_BACKEND = 'redis://localhost:6379/0'
+  - CELERY_TIMEZONE = 'Europe/Paris'
+  - SECRET_KEY = 'll=1_7y5i4e!5)@g+25ouhhz2kru6d=15twq5c)faerhj5x^@9'
+  - PLAYBOOK_PATH = "/home/admin/<playbook_path>"
+  - STORAGE_ENABLED = []
+  - VAULT_ENABLED = None
