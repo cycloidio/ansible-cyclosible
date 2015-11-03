@@ -1,6 +1,6 @@
 ---
 galaxy_info:
-  author: Seraf
+  author: cycloidio
   description: Role to install Cyclosible, a tool to add a REST api to ansible
   company: Cycloid
   license: GPLv3
