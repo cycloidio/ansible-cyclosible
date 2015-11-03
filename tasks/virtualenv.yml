@@ -5,6 +5,7 @@
   with_items:
     - python-dev
     - python-pip
+    - libmysqlclient-dev
   when: ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu'
 
 - name: Centos | Install list of packages
@@ -12,6 +13,7 @@
   with_items:
     - python-devel
     - python-pip
+    - mysql-libs
   when: ansible_distribution == 'CentOS' or ansible_distribution == 'Red Hat Enterprise Linux'
 
 - name: Install virtualenv and virtualenvwrapper
