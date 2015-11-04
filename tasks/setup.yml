@@ -3,5 +3,9 @@
 - name: Install Cyclosible
   pip: name=cyclosible virtualenv={{ cyclosible_virtualenv_dir }}
 
+- name: Install Plugin Packages
+  pip: name={{ item }} virtualenv={{ cyclosible_virtualenv_dir }}
+  with_items: "{{ cyclosible_plugin_packages }}"
+
 - name: Install uWSGI
   pip: name=uwsgi virtualenv={{ cyclosible_virtualenv_dir }}

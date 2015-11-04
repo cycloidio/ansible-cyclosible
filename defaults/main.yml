@@ -2,7 +2,7 @@
 # defaults file for cyclosible
 cyclosible_user: admin
 cyclosible_virtualenv_dir: /home/{{ cyclosible_user }}/.cyclosible_env
-
+cyclosible_plugin_packages: []
 cyclosible_settings:
   - |
     DATABASES = {
