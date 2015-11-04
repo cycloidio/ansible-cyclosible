@@ -9,12 +9,12 @@
 - name: Collecting static files
   django_manage: >
       command=collectstatic
-      app_path={{ virtualenv_dir }}//build/cyclosible/cyclosible/
-      virtualenv={{ virtualenv_dir }}
+      app_path={{ cyclosible_virtualenv_dir }}//build/cyclosible/cyclosible/
+      virtualenv={{ cyclosible_virtualenv_dir }}
 
 - name: Initialize/Updating the database
   django_manage: >
       command=migrate
-      app_path={{ virtualenv_dir }}//build/cyclosible/cyclosible/
-      virtualenv={{ virtualenv_dir }}
+      app_path={{ cyclosible_virtualenv_dir }}//build/cyclosible/cyclosible/
+      virtualenv={{ cyclosible_virtualenv_dir }}
   run_once: true
