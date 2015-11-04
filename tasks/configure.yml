@@ -17,3 +17,4 @@
       command=migrate
       app_path={{ virtualenv_dir }}//build/cyclosible/cyclosible/
       virtualenv={{ virtualenv_dir }}
+  run_once: true
