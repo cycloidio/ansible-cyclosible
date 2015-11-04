@@ -5,3 +5,15 @@
 
 - name: Configure Cyclosible
   template: src=settings.py.j2 dest=/etc/cyclosible/settings.py owner={{ cyclosible_user }} group=root mode=0740
+
+- name: Collecting static files
+  django_manage: >
+      command=collectstatic
+      app_path={{ virtualenv_dir }}//build/cyclosible/cyclosible/
+      virtualenv={{ virtualenv_dir }}
+
+- name: Initialize/Updating the database
+  django_manage: >
+      command=migrate
+      app_path={{ virtualenv_dir }}//build/cyclosible/cyclosible/
+      virtualenv={{ virtualenv_dir }}
